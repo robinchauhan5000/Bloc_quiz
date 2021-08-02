@@ -3,17 +3,17 @@ part of 'quiz_bloc.dart';
 abstract class QuizEvent extends Equatable {
   const QuizEvent();
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [];
 }
 
 class SelectOptionEvent extends QuizEvent {
-  final int correctAsnwer;
-  List<int> results;
+  final QuizModel? correctAsnwer;
+  final List<int>? results;
 
-  SelectOptionEvent({this.correctAsnwer});
+  SelectOptionEvent({this.correctAsnwer, this.results});
 
   @override
-  List<Object> get props => [correctAsnwer];
+  List<Object?> get props => [correctAsnwer, results];
 }
 
 class QuizLoadedEvent extends QuizEvent {

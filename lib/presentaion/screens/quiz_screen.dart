@@ -19,7 +19,7 @@ class _QuizScreenState extends State<QuizScreen> {
   @override
   void initState() {
     super.initState();
-    // getList();
+    BlocProvider.of<QuizBloc>(context).add(QuizLoadedEvent());
   }
 
   getList() async {
@@ -42,15 +42,15 @@ class _QuizScreenState extends State<QuizScreen> {
             );
           }
           if (state is QuizLoadedState) {
-            print(state.quizListData[0].question);
+            print(state.quizListData?.length);
             return Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text(state.quizListData[0].question),
-                Text(state.quizListData[0].options[0]),
-                Text(state.quizListData[0].options[1]),
-                Text(state.quizListData[0].options[2]),
-                Text(state.quizListData[0].options[3]),
+                // Text(state.quizListData[0].question),
+                // Text(state.quizListData[0].options[0]),
+                // Text(state.quizListData[0].options[1]),
+                // Text(state.quizListData[0].options[2]),
+                // Text(state.quizListData[0].options[3]),
                 ElevatedButton(
                   onPressed: () {},
                   child: Text('Next Question'),

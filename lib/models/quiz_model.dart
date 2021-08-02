@@ -1,9 +1,9 @@
 import 'package:equatable/equatable.dart';
 
 class QuizModel extends Equatable {
-  final String question;
-  final List<String> options;
-  final int correctAnswer;
+  final String? question;
+  final List<String>? options;
+  final int? correctAnswer;
 
   QuizModel({
     this.question,
@@ -12,10 +12,10 @@ class QuizModel extends Equatable {
   });
 
   QuizModel copyWith({
-    final String question,
-    final List<String> options,
-    final int correctAnswer,
-    List<QuizModel> data,
+    final String? question,
+    final List<String>? options,
+    final int? correctAnswer,
+    final List<QuizModel>? data,
   }) {
     return QuizModel(
       question: question ?? this.question,
@@ -25,7 +25,7 @@ class QuizModel extends Equatable {
   }
 
   @override
-  List<Object> get props => [question, correctAnswer, options];
+  List<Object?> get props => [question, correctAnswer, options];
 
   List<QuizModel> data = [
     QuizModel(
